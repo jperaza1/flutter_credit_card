@@ -206,15 +206,12 @@ class _CreditCardFormState extends State<CreditCardForm> {
                     FocusScope.of(context).requestFocus(expiryDateNode),
                 decoration: widget.inputConfiguration.cardNumberDecoration,
                 style: widget.inputConfiguration.cardNumberTextStyle,
-                keyboardType:
-                    const TextInputType.numberWithOptions(decimal: false),
+                keyboardType: TextInputType.phone,
                 textInputAction: TextInputAction.next,
                 inputFormatters: <TextInputFormatter>[
                   FilteringTextInputFormatter.digitsOnly,
                 ],
-                autofillHints: widget.disableCardNumberAutoFillHints
-                    ? null
-                    : const <String>[AutofillHints.creditCardNumber],
+                autofillHints: null,
                 autovalidateMode: widget.autovalidateMode,
                 validator: widget.cardNumberValidator ??
                     (String? value) => Validators.cardNumberValidator(
