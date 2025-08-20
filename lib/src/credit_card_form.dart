@@ -206,7 +206,8 @@ class _CreditCardFormState extends State<CreditCardForm> {
                     FocusScope.of(context).requestFocus(expiryDateNode),
                 decoration: widget.inputConfiguration.cardNumberDecoration,
                 style: widget.inputConfiguration.cardNumberTextStyle,
-                keyboardType: TextInputType.number,
+                keyboardType:
+                    const TextInputType.numberWithOptions(decimal: false),
                 textInputAction: TextInputAction.next,
                 inputFormatters: <TextInputFormatter>[
                   FilteringTextInputFormatter.digitsOnly,
@@ -242,7 +243,8 @@ class _CreditCardFormState extends State<CreditCardForm> {
                           widget.inputConfiguration.expiryDateDecoration,
                       style: widget.inputConfiguration.expiryDateTextStyle,
                       autovalidateMode: widget.autovalidateMode,
-                      keyboardType: TextInputType.number,
+                      keyboardType:
+                          const TextInputType.numberWithOptions(decimal: false),
                       textInputAction: TextInputAction.next,
                       inputFormatters: <TextInputFormatter>[
                         FilteringTextInputFormatter.digitsOnly,
@@ -273,7 +275,8 @@ class _CreditCardFormState extends State<CreditCardForm> {
                       onEditingComplete: _onCvvEditComplete,
                       decoration: widget.inputConfiguration.cvvCodeDecoration,
                       style: widget.inputConfiguration.cvvCodeTextStyle,
-                      keyboardType: TextInputType.number,
+                      keyboardType:
+                          const TextInputType.numberWithOptions(decimal: false),
                       autovalidateMode: widget.autovalidateMode,
                       textInputAction: widget.isHolderNameVisible
                           ? TextInputAction.next
