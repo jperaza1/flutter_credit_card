@@ -208,6 +208,9 @@ class _CreditCardFormState extends State<CreditCardForm> {
                 style: widget.inputConfiguration.cardNumberTextStyle,
                 keyboardType: TextInputType.number,
                 textInputAction: TextInputAction.next,
+                inputFormatters: <TextInputFormatter>[
+                  FilteringTextInputFormatter.digitsOnly,
+                ],
                 autofillHints: widget.disableCardNumberAutoFillHints
                     ? null
                     : const <String>[AutofillHints.creditCardNumber],
@@ -241,6 +244,9 @@ class _CreditCardFormState extends State<CreditCardForm> {
                       autovalidateMode: widget.autovalidateMode,
                       keyboardType: TextInputType.number,
                       textInputAction: TextInputAction.next,
+                      inputFormatters: <TextInputFormatter>[
+                        FilteringTextInputFormatter.digitsOnly,
+                      ],
                       autofillHints: const <String>[
                         AutofillHints.creditCardExpirationDate
                       ],
@@ -272,6 +278,9 @@ class _CreditCardFormState extends State<CreditCardForm> {
                       textInputAction: widget.isHolderNameVisible
                           ? TextInputAction.next
                           : TextInputAction.done,
+                      inputFormatters: <TextInputFormatter>[
+                        FilteringTextInputFormatter.digitsOnly,
+                      ],
                       autofillHints: const <String>[
                         AutofillHints.creditCardSecurityCode
                       ],
